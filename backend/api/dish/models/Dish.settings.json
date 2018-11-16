@@ -2,7 +2,7 @@
   "connection": "default",
   "collectionName": "",
   "info": {
-    "name": "restaurants",
+    "name": "dish",
     "description": ""
   },
   "options": {
@@ -13,23 +13,23 @@
       "default": "",
       "type": "string"
     },
-    "open": {
+    "description": {
       "default": "",
-      "type": "date"
+      "type": "text"
     },
-    "images": {
+    "image": {
       "model": "file",
       "via": "related",
       "plugin": "upload",
       "required": false
     },
-    "description": {
+    "price": {
       "default": "",
-      "type": "text"
+      "type": "integer"
     },
-    "dishes": {
-      "collection": "dish",
-      "via": "restaurants"
+    "restaurants": {
+      "model": "restaurants",
+      "via": "dishes"
     }
   }
 }

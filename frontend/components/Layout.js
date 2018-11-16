@@ -1,8 +1,8 @@
-import React  from 'react';
+import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
-import { Container, Nav, NavItem } from 'reactstrap';
+import {Container, Nav, NavItem, Row, Col} from 'reactstrap';
 
 export default class Layout extends React.Component {
 	constructor(props) {
@@ -10,19 +10,19 @@ export default class Layout extends React.Component {
 
 	}
 
-	static async getInitialProps({ req }) {
+	static async getInitialProps({req}) {
 		let pageProps = {};
 		if (Component.getInitialProps) {
 			pageProps = await Component.getInitialProps(ctx);
 		}
-		return { pageProps, isAuthenticated };
+		return {pageProps, isAuthenticated};
 	}
 
-	render(){
-		const { children } = this.props;
-		const title = "Welcome to Next.js"
+	render() {
+		const {children} = this.props;
+		const title = "Deliveroo Clone - Food Marketplace";
 
-		return(
+		return (
 			<div>
 				<Head>
 					<title>{title}</title>
@@ -35,25 +35,29 @@ export default class Layout extends React.Component {
 					<script src="https://js.stripe.com/v3"/>
 				</Head>
 				<header>
-					<Nav className="navbar navbar-dark bg-dark">
-						<NavItem>
-							<Link href="/">
-								<a className="navbar-brand">Home</a>
-							</Link>
-						</NavItem>
+					<Row>
+						<Col>
+							<Nav className="navbar navbar-dark bg-dark">
+								<NavItem>
+									<Link href="/">
+										<a className="navbar-brand">Home</a>
+									</Link>
+								</NavItem>
 
-						<NavItem className="ml-auto">
-							<Link href="/signin">
-								<a className="nav-link">Sign In</a>
-							</Link>
-						</NavItem>
+								<NavItem className="ml-auto">
+									<Link href="/signin">
+										<a className="nav-link">Sign In</a>
+									</Link>
+								</NavItem>
 
-						<NavItem>
-							<Link href="/signup">
-								<a className="nav-link">Sign Up</a>
-							</Link>
-						</NavItem>
-					</Nav>
+								<NavItem>
+									<Link href="/signup">
+										<a className="nav-link">Sign Up</a>
+									</Link>
+								</NavItem>
+							</Nav>
+						</Col>
+					</Row>
 				</header>
 				<Container>
 					{children}
