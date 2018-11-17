@@ -40,7 +40,7 @@ export default class Layout extends React.Component {
 							<Nav className="navbar navbar-dark bg-dark">
 								<NavItem>
 									<Link href="/">
-										<a className="navbar-brand">Home</a>
+										<a className="navbar-brand">Deliveroo 🍔</a>
 									</Link>
 								</NavItem>
 

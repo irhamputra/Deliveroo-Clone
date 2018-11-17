@@ -37,7 +37,7 @@ const RestaurantList = ({ data: {loading, error, restaurants}, search }, req) =>
 								</CardBody>
 								<div className="card-footer">
 									<Link as={`restaurant/${res._id}`} href={`/restaurant?id=${res._id}`}>
-										<a className="btn btn-primary">View</a>
+										<a className="btn btn-dark btn-block">View 👀</a>
 									</Link>
 								</div>
 							</Card>
@@ -46,7 +46,7 @@ const RestaurantList = ({ data: {loading, error, restaurants}, search }, req) =>
 				</div>
 			)
 		} else {
-			return <h1 className="text-center my-xl-5">Restaurant not found</h1>
+			return <h1 className="text-center my-xl-5">Oops! Restaurant is not found, find another one 👀</h1>
 		}
 	}
 

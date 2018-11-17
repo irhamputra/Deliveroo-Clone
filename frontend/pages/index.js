@@ -21,16 +21,16 @@ export default class Index extends Component {
 					<Col>
 						<Col>
 							<div className="my-xl-5">
-								<h1>Deliveroo Clone</h1>
-								<p className="lead">Your favourite restaurants, delivered fast to your door.</p>
+								<h1>Deliveroo Clone 🍔</h1>
+								<p className="lead">Your favourite restaurants, delivered fast to your door. </p>
 							</div>
 						</Col>
 
 						<Col>
 							<div className="search">
 								<InputGroup>
-									<InputGroupAddon addonType="append">Search</InputGroupAddon>
-									<Input onChange={this.onChange.bind(this)}/>
+									<InputGroupAddon addonType="append">Search 🔍</InputGroupAddon>
+									<Input placeholder="Type any restaurant name here.." onChange={this.onChange.bind(this)}/>
 								</InputGroup>
 							</div>
 						</Col>
