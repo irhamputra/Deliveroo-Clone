@@ -16,8 +16,7 @@ export const strapiRegister = (username, email, password) => {
 	});
 	return Promise.resolve();
 };
-//use strapi to get a JWT and token object, save
-//to approriate cookei for future requests
+
 export const strapiLogin = (email, password) => {
 	if (!process.browser) {
 		return;
@@ -49,7 +48,6 @@ export const unsetToken = () => {
 	Cookies.remove("username");
 	Cookies.remove("cart");
 
-	// to support logging out from all windows
 	window.localStorage.setItem("logout", Date.now());
 	Router.push("/");
 };
@@ -80,7 +78,6 @@ export const getUserFromLocalCookie = () => {
 	return Cookies.get("username");
 };
 
-//these will be used if you expand to a provider such as Auth0
 const getQueryParams = () => {
 	const params = {};
 	window.location.href.replace(

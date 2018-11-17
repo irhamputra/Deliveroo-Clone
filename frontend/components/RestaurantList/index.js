@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 import Link from 'next/link';
 import { graphql } from 'react-apollo';
-import { Card, CardBody, CardImg, CardText, CardTitle } from 'reactstrap';
+import { Container, Card, CardBody, CardImg, CardText, CardTitle } from 'reactstrap';
 
 // Query from GraphQL
 const query = gql`
@@ -26,10 +26,10 @@ const RestaurantList = ({ data: {loading, error, restaurants}, search }, req) =>
 
 		if (searchQuery.length != 0){
 			return (
-				<div className="py-md-3">
+				<Container>
 					{searchQuery.map(res => {
 						return (
-							<Card style={{ width: "31.3%", margin: "10px"}} className="h-100" key={res._id}>
+							<Card style={{ width: "31%", margin: "10px"}} className="h-100" key={res._id}>
 								<CardImg top={true} style={{ height: 250 }} src={`http://localhost:1337${res.images.url}`}/>
 								<CardBody>
 									<CardTitle>{res.name}</CardTitle>
@@ -43,7 +43,7 @@ const RestaurantList = ({ data: {loading, error, restaurants}, search }, req) =>
 							</Card>
 						)
 					})}
-				</div>
+				</Container>
 			)
 		} else {
 			return <h1 className="text-center my-xl-5">Oops! Restaurant is not found, find another one 👀</h1>

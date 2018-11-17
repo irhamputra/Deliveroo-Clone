@@ -1,8 +1,7 @@
-import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
+import {Container} from 'reactstrap';
 
-import {Container, Nav, NavItem, Row, Col} from 'reactstrap';
+import Navigation from './Header/Navigation';
 
 export default class Layout extends React.Component {
 	constructor(props) {
@@ -23,7 +22,7 @@ export default class Layout extends React.Component {
 		const title = "Deliveroo Clone - Food Marketplace";
 
 		return (
-			<div>
+			<>
 				<Head>
 					<title>{title}</title>
 					<meta charSet="utf-8"/>
@@ -34,35 +33,17 @@ export default class Layout extends React.Component {
 					      crossOrigin="anonymous"/>
 					<script src="https://js.stripe.com/v3"/>
 				</Head>
-				<header>
-					<Row>
-						<Col>
-							<Nav className="navbar navbar-dark bg-dark">
-								<NavItem>
-									<Link href="/">
-										<a className="navbar-brand">Deliveroo 🍔</a>
-									</Link>
-								</NavItem>
 
-								<NavItem className="ml-auto">
-									<Link href="/signin">
-										<a className="nav-link">Sign In</a>
-									</Link>
-								</NavItem>
+				<Navigation/>
 
-								<NavItem>
-									<Link href="/signup">
-										<a className="nav-link">Sign Up</a>
-									</Link>
-								</NavItem>
-							</Nav>
-						</Col>
-					</Row>
-				</header>
 				<Container>
 					{children}
 				</Container>
-			</div>
+
+				<footer className="my-xl-5">
+					<p className="text-center text-muted small">Deliveroo Clone GmbH © 2018</p>
+				</footer>
+			</>
 		)
 	}
 

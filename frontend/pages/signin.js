@@ -1,1 +1,1 @@
-export default () => <h1>Sign In here</h1>
+export default () => <h1>Login</h1>

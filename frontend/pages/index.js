@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Col, Input, InputGroup, InputGroupAddon, Row} from 'reactstrap';
+import {Container, Col, Input, InputGroup, InputGroupAddon, Row} from 'reactstrap';
 import RestaurantList from "../components/RestaurantList";
 
 export default class Index extends Component {
@@ -16,28 +16,26 @@ export default class Index extends Component {
 
 	render() {
 		return (
-			<div className="container-fluid">
+			<Container>
 				<Row>
 					<Col>
-						<Col>
-							<div className="my-xl-5">
-								<h1>Deliveroo Clone 🍔</h1>
-								<p className="lead">Your favourite restaurants, delivered fast to your door. </p>
-							</div>
-						</Col>
+						<div className="my-xl-5">
+							<h1>Deliveroo Clone 🍔</h1>
+							<p className="lead">Your favourite restaurants, delivered fast to your door. </p>
+						</div>
 
-						<Col>
-							<div className="search">
-								<InputGroup>
-									<InputGroupAddon addonType="append">Search 🔍</InputGroupAddon>
-									<Input placeholder="Type any restaurant name here.." onChange={this.onChange.bind(this)}/>
-								</InputGroup>
-							</div>
-						</Col>
+						<div className="search mb-xl-5">
+							<InputGroup>
+								<InputGroupAddon addonType="append">Search 🔍</InputGroupAddon>
+								<Input placeholder="Type any restaurant name here.."
+								       onChange={this.onChange.bind(this)}/>
+							</InputGroup>
+						</div>
+
 						<RestaurantList search={this.state.query}/>
 					</Col>
 				</Row>
-			</div>
+			</Container>
 		)
 	}
 }

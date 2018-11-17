@@ -24,6 +24,7 @@ class MyApp extends App {
 						<Component {...pageProps} />
 					</Layout>
 				</AppProvider>
+
 				<style jsx global>
 					{`
                         a {
